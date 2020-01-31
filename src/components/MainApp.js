@@ -46,11 +46,11 @@ export default class MainApp extends Component {
     }));
   }
 
-  Header = "Header";
+  Header = "My First React CRUD App (Header)";
   Footer = "Footer";
   Action = "ActionParent";
-  MainApp = "MainAppMainParent";
-  AddOption = "AddOption";
+  MainApp = "MainApp";
+  AddOption = "Add User";
   Options = "Options";
   render() {
     return (

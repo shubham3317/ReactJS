@@ -8,6 +8,11 @@ export default class AddOption extends Component {
       error: undefined
     };
   }
+  /* componentDidMount() {
+    return (this.state = {
+      error: null
+    });
+  } */
   addUser(e) {
     e.preventDefault();
     const uname = e.target.elements.uname.value.trim();
@@ -27,9 +32,11 @@ export default class AddOption extends Component {
     return (
       <div>
         {this.props.addOptionMain}
-        <div class="alert alert-danger" role="alert">
-          {this.state.error}
-        </div>
+        {this.state.error ? (
+          <div class="col-3 alert alert-danger" role="alert">
+            {this.state.error}
+          </div>
+        ) : null}
         <form onSubmit={this.handleAddOption}>
           Name: <input type="text" name="uname" />
           <button class="btn btn-success">Add User</button>
