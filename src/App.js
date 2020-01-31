@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import MainApp from "./components/MainApp";
 import Counter from "./components/Counter";
-
+//Simple CRUD Example
 class App extends Component {
   render() {
     return (
