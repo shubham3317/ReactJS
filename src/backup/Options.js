@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Option from "../components/Option";
-export default class Options extends Component {
+/* export default class Options extends Component {
   render() {
     var option = "OptionChild";
 
@@ -25,4 +25,29 @@ export default class Options extends Component {
       </div>
     );
   }
+} */
+
+const Options = (props) => {
+  return (
+    <div>
+      <div>{props.optionsMain}</div>
+      <button
+        class="btn btn-danger"
+        onClick={props.handleDeleteOptions}
+        disabled={!props.actionMain}
+      >
+        Delete All
+        </button>
+      <h4>
+        {props.optionsArray.map(option => (
+          <Option
+            data={option}
+            handleDeleteOption={props.handleDeleteOption}
+          />
+        ))}
+      </h4>
+    </div>
+  )
 }
+
+export default Options

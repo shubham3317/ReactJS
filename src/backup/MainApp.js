@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Action from "./Action";
 import Options from "./Options";
 import AddOption from "./AddOption";
+import AxiosApp from "./AxiosApp";
 
 export default class MainApp extends Component {
   constructor(props) {
@@ -14,6 +15,11 @@ export default class MainApp extends Component {
     this.state = {
       optionsData: []
     };
+  }
+
+  componentDidUpdate(prevState) {
+    const json = JSON.stringify(this.state.optionsData);
+    localStorage.setItem("optionsData", json);
   }
 
   handleDeleteOptions() {
@@ -71,6 +77,8 @@ export default class MainApp extends Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <Footer footerMain={this.Footer} />
+        <br></br>
+        <AxiosApp />
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Action extends Component {
+/* export default class Action extends Component {
   addUser(e) {
     e.preventDefault();
     const uname = e.target.elements.uname.value.trim();
@@ -13,4 +13,13 @@ export default class Action extends Component {
       </div>
     );
   }
+} */
+
+const Action = (props) => {
+  return (
+    <div>
+      <h4>{props.actionMain}</h4>
+    </div>
+  )
 }
+export default Action
